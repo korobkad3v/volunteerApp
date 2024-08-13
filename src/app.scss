@@ -1,3 +1,16 @@
+@use './scss/defenition.scss' as d;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    background-color: d.$bg-color;
+    margin: 0;
+    color: d.$w;
+}
+
 .app {
     display: flex;
     flex-direction: column;

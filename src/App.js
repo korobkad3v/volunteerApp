@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavBar from './components/navbar/NavBar';
 import Header from './components/header/Header';
 import PostCard from './components/postcard/PostCard';
+import './normalize.css';
 import './app.scss';
 
 
@@ -15,9 +16,9 @@ class App extends Component {
         ];
 
         return (
-            <div className="app">F
+            <div className="app">
                 <Header />
-                <div className="main-container">
+                <main className="main-container">
                     <NavBar />
                     <div className="product-grid">
                         {products.map(product => (
@@ -29,7 +30,7 @@ class App extends Component {
                             />
                         ))}
                     </div>
-                </div>
+                </main>
             </div>
         );
     }

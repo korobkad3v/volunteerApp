@@ -5,7 +5,8 @@ class Header extends Component {
     render() {
         return (
             <header className="header">
-                <h1>My App</h1>
+                <h1>Logo</h1>
+                <div>search</div>
             </header>
         );
     }

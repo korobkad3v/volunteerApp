@@ -1,0 +1,10 @@
+$w: #fff;
+
+$bg-color: #1D203E;
+$sec-color: #454C84; 
+
+@mixin logo-font{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+}

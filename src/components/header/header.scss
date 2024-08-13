@@ -1,10 +1,26 @@
+
+@use '../../scss/defenition.scss' as d;
+
 .header {
     width: 100%;
     height: 60px;
-    background-color: #333;
-    color: white;
+    padding: 0 12px;
+    color: d.$w;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     font-size: 24px;
+
+    h1 {
+        display: block;
+        margin: 0;
+        @include d.logo-font;
+    }
+
+    div {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+
+    }
 }
