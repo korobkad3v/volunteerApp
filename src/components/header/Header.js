@@ -6,7 +6,6 @@ class Header extends Component {
         return (
             <header className="header">
                 <h1>Logo</h1>
-                <div>search</div>
             </header>
         );
     }
