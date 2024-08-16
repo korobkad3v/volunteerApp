@@ -8,7 +8,7 @@ class PostCard extends Component {
             <div className="postcard" style={{backgroundImage: `url(${imgUrl})`}}>
                 <div className="postcard__info-overlay">
                     <div className="postcard__info-overlay__content">
-
+                        
                         <h2>{title}</h2>
                         <p>{description}</p>
 
