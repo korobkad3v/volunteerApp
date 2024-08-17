@@ -4,7 +4,7 @@
 
 $border-radius: 12px;
 
-$postcard-w: 354px;
+$postcard-w: 328px;
 $postcard-h: 234px;
 
 $info-overlay-padding: 15px;
@@ -17,7 +17,7 @@ $info-overlay-w: calc(100% - 2 * $info-overlay-padding);
     background-image: url('https://randomwordgenerator.com/img/picture-generator/fantasy-3146946_640.jpg');
     background-size: cover;
     background-position: center;
-    border-radius: $border-radius + 2px;
+    border-radius: $border-radius;
 
 }
 
