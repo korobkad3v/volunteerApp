@@ -3,7 +3,7 @@
 .nav-bar {
     width: 56px;
     height: auto;
-    padding: 0 12px;
+    margin: 0 12px;
 
     &__container {
         display: flex;
@@ -32,7 +32,7 @@
         width: 20px;
         height: 20px;
 
-        fill: transparent;
+        fill: d.$icon-color;
 
         position: absolute;
         top: 50%;
