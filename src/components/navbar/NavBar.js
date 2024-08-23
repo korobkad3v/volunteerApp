@@ -8,10 +8,10 @@ class NavBar extends Component {
         return (
             <nav className="nav-bar">
                 <div className="nav-bar__container">
-                    <a href="#" className="nav-icon active">
+                    <a href="{() => false}" className="nav-icon active">
                         <SvgIcon id="#home" className="svg-nav-icon"/>
                     </a>
-                    <a href="" className="nav-icon">
+                    <a href="{() => false}" className="nav-icon">
                         <SvgIcon id="#plus" className="svg-nav-icon"/>
                     </a>
                 </div>
