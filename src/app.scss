@@ -67,18 +67,3 @@ body {
     height: 100%;
 }
 
-.main-container {
-    display: flex;
-    
-    height: 100%;
-    overflow: auto;
-}
-
-.product-grid {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(328px, 1fr));
-  gap: 12px;
-    
-} 
