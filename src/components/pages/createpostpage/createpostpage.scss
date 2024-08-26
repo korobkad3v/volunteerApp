@@ -8,11 +8,52 @@
    
     width: 100%;
     height: 100%;
-}
 
-.create-post__form{
-
-    h1 {
-        @include d.title-font;
+    &__form{
+        display: flex;
+        flex-direction: column;
+        max-width: 328px;
     }
+
+    &__title{
+        @include d.title-font;
+        margin-bottom: 18px;
+    }
+
+    &__form-group{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    &__label{
+        @include d.regular-font;
+
+        padding-left: 12px;
+        line-height: 1.5;
+    }
+
+    &__input,
+    &__textarea {
+        width: 100%;
+        background-color: d.$sec-color;
+        padding: 4px 12px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        color: d.$w;
+        font-size: 14px;
+
+        &::placeholder{
+            @include d.light-font--50opacity;
+        }
+    }
+
+    &__textarea{
+        resize: vertical;
+        min-height: 200px;
+        max-height: 500px;
+    }
+
 }

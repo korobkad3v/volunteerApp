@@ -3,6 +3,7 @@ $w: #fff;
 $bg-color: #1D203E;
 $sec-color: #454C84;
 $icon-color: #F4F7FF; 
+$placeholder-color: rgba(255, 255, 255, 0.5);
 
 @mixin logo-font{
     font-family: "Montserrat", sans-serif;
@@ -16,3 +17,20 @@ $icon-color: #F4F7FF;
     font-size: 34px;
     letter-spacing: 3%;
 }   
+
+@mixin regular-font{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    
+}
+
+@mixin light-font--50opacity{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    color: #fff;
+    opacity: 0.5;
+    font-size: 14px;
+    line-height: 120%;
+    
+}
