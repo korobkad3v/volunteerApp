@@ -11,6 +11,8 @@ class CreatePostPage extends Component {
         
         super(props);
 
+        
+
         this.state = {
             title: '',
             image: null,
@@ -22,7 +24,11 @@ class CreatePostPage extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleImageDrop = this.handleImageDrop.bind(this);
+        this.handleImageSelect = this.handleImageSelect.bind(this);
+        this.handleDropzoneClick = this.handleDropzoneClick.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        
+        this.fileInputRef = React.createRef();
 
     }
 
@@ -36,16 +42,28 @@ class CreatePostPage extends Component {
     handleImageDrop(event) {
         event.preventDefault();
         const file = event.dataTransfer.files[0];
-        this.setState({
-            image: file
+        const imageUrl = URL.createObjectURL(file);
+        this.setState( {
+            image: file, imageUrl
         });
     }
+
+    handleImageSelect(event) {
+        const file = event.target.files[0];
+        const imageUrl = URL.createObjectURL(file);
+        this.setState({ image: file, imageUrl });
+      }
     
-      handleSubmit(event) {
+    handleDropzoneClick() {
+    if (this.fileInputRef.current) {
+        this.fileInputRef.current.click();
+        }
+    }
+    handleSubmit(event) {
         event.preventDefault();
         const { title, image, email, shortDesc, content } = this.state;
     
-        // Пример отправки данных на сервер
+        
         const formData = new FormData();
         formData.append('title', title);
         formData.append('image', image);
@@ -82,7 +100,7 @@ class CreatePostPage extends Component {
 
                     <div className="create-post">
                         
-                        <form class="create-post__form" onSubmit={this.handleSubmit}>
+                        <form className="create-post__form" onSubmit={this.handleSubmit}>
                             <h1 className="create-post__title">New opportunity.</h1>
                             <div className="create-post__form-group">
                                 <label htmlFor="title" className="create-post__label">Title</label>
@@ -97,20 +115,27 @@ class CreatePostPage extends Component {
                             </div>
 
                             <div className="create-post__form-group create-post-page__form-group--image-dropzone"
+                            onClick={this.handleDropzoneClick}
                             onDrop={this.handleImageDrop}
                             onDragOver={(e) => e.preventDefault()}>
-                                <label htmlFor="image">Upload Image</label>
+                                <label className="create-post__label" htmlFor="image">Upload Image</label>
                                 <div className="create-post__dropzone">
                                 {this.state.image ? (
-                                    <p className="create-post-page__dropzone-text">{this.state.image.name}</p>
-                                    ) : (
+                                    <img 
+                                    src={this.state.imageUrl} 
+                                    alt="Uploaded Preview"
+                                    className="create-post__dropzone-image"
+                                    />
+                                ) : (
                                     <p className="create-post-page__dropzone-text">Drag and drop an image here, or click to select one</p>
                                     )}
-                                     <input
+                                    <input
+                                    name="image"
                                     type="file"
-                                    onChange={(e) => this.setState({ image: e.target.files[0] })}
-                                    className="create-post-page__dropzone-input"
-                                    style={{ display: 'none' }}
+                                    ref={this.fileInputRef}
+                                    onChange={this.handleImageSelect}
+                                    className="create-post__dropzone-input"
+                                    accept="image/*"
                                     />
                                 </div> 
                             </div>
@@ -141,7 +166,7 @@ class CreatePostPage extends Component {
                                 />
                             </div>
                             <div className="create-post__form-group">
-                                <label htmlFor="content" className="create-post__label">Content</label>
+                                <label htmlFor="content" className="create-post__label"     >Content</label>
                                 <textarea
                                     id="content"
                                     name="content"
@@ -151,6 +176,8 @@ class CreatePostPage extends Component {
                                     placeholder="What's on your mind?"
                                 />
                             </div>
+
+                            <button className="create-post__submit-btn" type='submit'>Submit</button>
                         </form>
                     </div>
                 </main>
