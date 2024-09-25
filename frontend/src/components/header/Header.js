@@ -5,7 +5,7 @@ class Header extends Component {
     render() {
         return (
             <header className="header">
-                <h1>Logo</h1>
+                <h1>VolConnect</h1>
             </header>
         );
     }
