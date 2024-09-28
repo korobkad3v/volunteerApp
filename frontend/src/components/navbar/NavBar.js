@@ -24,7 +24,7 @@ class NavBar extends Component {
                     <NavLink to="/" className="nav-icon" activeClassName="nav-icon active">
                         <SvgIcon id="#home" className="svg-nav-icon"/>
                     </NavLink>
-                    <NavLink to="/create-post" className="nav-icon" activeClassName="nav-icon active">
+                    <NavLink to="/new-post" className="nav-icon" activeClassName="nav-icon active">
                         <SvgIcon id="#plus" className="svg-nav-icon"/>
                     </NavLink>
                 </div>

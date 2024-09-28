@@ -18,7 +18,11 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                use: ['style-loader', 'css-loader', 'sass-loader'], 
+            },
+            {
+                test: /\.css$/, 
+                use: ['style-loader', 'css-loader'],
             },
         ],
     },
@@ -28,9 +32,12 @@ module.exports = {
         }),
     ],
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        allowedHosts: ['localhost', '127.0.0.1'],
+        static: {
+            directory: path.join(__dirname, 'dist'), // Укажите каталог для статических файлов
+        },
         compress: true,
-        port: 9000,
+        port: 3000,
     },
     mode: 'development',
 };

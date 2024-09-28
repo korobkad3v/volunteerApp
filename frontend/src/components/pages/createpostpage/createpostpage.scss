@@ -36,6 +36,7 @@
 
     &__input,
     &__textarea {
+        box-sizing: border-box;
         width: 100%;
         background-color: d.$sec-color;
         padding: 4px 12px;
@@ -48,6 +49,19 @@
         &::placeholder{
             @include d.light-font--50opacity;
         }
+    }
+
+    &__input:focus,
+    &__textarea:focus{
+
+        outline: 1px solid d.$button-color;
+        box-shadow: none;
+        
+    } 
+
+    &__error{
+        font-weight: 400;
+        color: #ee4040;
     }
 
     &__textarea{
@@ -102,4 +116,7 @@
     &__dropzone-input{
         display: none;
     }
+
+    
+
 }

@@ -13,7 +13,7 @@ class App extends Component {
             <Router>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/create-post" element={<CreatePostPage />} />
+                    <Route path="/new-post" element={<CreatePostPage />} />
                 </Routes>
             </Router>
         );
