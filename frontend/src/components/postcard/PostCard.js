@@ -1,21 +1,24 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import './postcard.scss';
 
 class PostCard extends Component {
     render() {
-        const {title, description, imgUrl} = this.props;
+        const {id, title, description, imgUrl} = this.props;
         return (
-            <div className="postcard" style={{backgroundImage: `url(${imgUrl})`}}>
-                <div className="postcard__info-overlay">
-                    <div className="postcard__info-overlay__content">
-                        
-                        <h2>{title}</h2>
-                        <p>{description}</p>
+            
+                <Link to={`/post/${id}`} className="postcard" style={{backgroundImage: `url(http://localhost:9000/uploads/${imgUrl})`}}>
+                    <div className="postcard__info-overlay">
+                        <div className="postcard__info-overlay__content">
+                            
+                            <h2>{title}</h2>
+                            <p>{description}</p>
 
+                        </div>
+                        
                     </div>
-                    
-                </div>
-            </div>
+                </Link>
+
         );
     }
 }

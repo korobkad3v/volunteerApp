@@ -11,6 +11,8 @@ $info-overlay-padding: 15px;
 $info-overlay-w: calc(100% - 2 * $info-overlay-padding);
 
 .postcard {
+    display: block;
+    
     position: relative;
     min-width: $postcard-w;
     height: $postcard-h;
@@ -19,6 +21,7 @@ $info-overlay-w: calc(100% - 2 * $info-overlay-padding);
     background-position: center;
     border-radius: $border-radius;
 
+    color: d.$w;
 }
 
 .postcard__info-overlay {
@@ -38,19 +41,19 @@ $info-overlay-w: calc(100% - 2 * $info-overlay-padding);
 .postcard__info-overlay__content{
     width: 100%;
     height: 100%;
-
+    
     h2 {
-        
+        @include d.title-font;
         margin: 0;
         font-size: 1.2em;
         font-weight: 700;
     }
 
     p {
-        
+        @include d.light-font;
         margin-top: 8px;
         font-size: 0.9em;
-        font-weight: 400;
+        
     }
 }
 

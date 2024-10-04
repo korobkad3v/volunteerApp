@@ -9,15 +9,31 @@ import './homepage.scss';
 
 
 class HomePage extends Component {
+    state = {
+        posts: [],
+        isLoading: true,
+        error: null,
+    };
+    componentDidMount() {
+        fetch("http://localhost:9000/posts").then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => this.setState({ posts: data, isLoading: false }))
+        .catch(error => this.setState({ error, isLoading: false }));
+    }
     render() {
-        const products = [
-            { id: 1, title: 'title 1', description: 'Description 1', imageUrl: 'https://randomwordgenerator.com/img/picture-generator/fantasy-3146946_640.jpg' },
-            { id: 2, title: 'title 2', description: 'Description 2', imageUrl: 'https://via.placeholder.com/500x500' },
-            { id: 3, title: 'title 3', description: 'Description 3', imageUrl: 'https://via.placeholder.com/324x234' },
-            { id: 4, title: 'title 4', description: 'Description 4', imageUrl: 'https://via.placeholder.com/324x234' },
-            { id: 5, title: 'title 4', description: 'Description 4', imageUrl: 'https://via.placeholder.com/324x234' }
-        ];
+        const { posts, isLoading, error } = this.state;
+        if (isLoading) {
+            return <div>Loading...</div>;
+        }
 
+        if (error) {
+            return <div>Error: {error.message}</div>;
+        }
+        console.log(posts);
         return (
             <div className="app">
                 
@@ -25,12 +41,12 @@ class HomePage extends Component {
                 <main className="main-container">
                     <NavBar />
                     <div className="product-grid">
-                        {products.map(product => (
+                        {posts.map(post => (
                             <PostCard
-                                key={product.id}
-                                title={product.title}
-                                description={product.description}
-                                imgUrl={product.imageUrl}
+                                id={post.id}
+                                title={post.title}
+                                description={post.short_desc}
+                                imgUrl={post.image_url}
                             />
                         ))}
                     </div>
