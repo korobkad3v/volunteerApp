@@ -33,7 +33,7 @@ class HomePage extends Component {
         if (error) {
             return <div>Error: {error.message}</div>;
         }
-        console.log(posts);
+        
         return (
             <div className="app">
                 
@@ -43,6 +43,7 @@ class HomePage extends Component {
                     <div className="product-grid">
                         {posts.map(post => (
                             <PostCard
+                                key={post.id}
                                 id={post.id}
                                 title={post.title}
                                 description={post.short_desc}

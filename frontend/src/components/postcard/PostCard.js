@@ -4,7 +4,7 @@ import './postcard.scss';
 
 class PostCard extends Component {
     render() {
-        const {id, title, description, imgUrl} = this.props;
+        const {key, id, title, description, imgUrl} = this.props;
         return (
             
                 <Link to={`/post/${id}`} className="postcard" style={{backgroundImage: `url(http://localhost:9000/uploads/${imgUrl})`}}>

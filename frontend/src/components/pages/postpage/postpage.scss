@@ -1,0 +1,74 @@
+@use '../../../scss/defenition.scss' as d;
+
+.post-page {
+    width: 320px;
+    margin: 0 auto 30px;
+    
+    display: flex;
+    flex-direction: column;
+    
+    border: 2px solid d.$sec-color;
+    padding: 20px;
+    border-radius: 8px;
+
+    &__image-container {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    &__title {
+        margin-top: 10px;
+        @include d.title-font;
+        font-weight: 700;
+        font-size: 32px;
+        
+    }
+    &__short-desc {
+        @include d.light-font;
+        font-weight: 200;
+        margin-top: 5px;
+    }
+    &__content {
+        margin-top: 20px;
+        font-size: 16px;
+        line-height: 1.6;
+        flex-grow: 1
+    }
+
+    &__contact {
+        border-radius: 0px !important;
+        border-top: 1px solid #ddd;
+        padding-top: 5px;
+        margin-top: auto;
+       
+        
+        border-radius: 8px;
+        text-align: center;
+
+        h3 {
+            text-align: left;
+            margin-bottom: 10px;
+            font-size: 18px;
+            
+        }
+        p {
+            text-align: left;
+        }
+        a {
+            color: #f02727;
+            text-decoration: none;
+            text-align: left;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
