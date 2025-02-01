@@ -1,0 +1,21 @@
+
+@use '../../scss/defenition.scss' as d;
+
+.header{
+    width: 100%;
+    min-height: 60px;
+    padding: 0 12px;
+    color: d.$w;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+    h1 {
+        display: block;
+        margin: 0;
+        @include d.logo-font;
+    }
+
+}
+
